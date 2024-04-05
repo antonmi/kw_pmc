@@ -19,11 +19,13 @@ export async function getList() {
     const allRows = response.data.values;
     if (allRows.length) {
       const rows = allRows.slice(1, allRows.length);
+
       return rows.map((row) => ({
         timestamp: row[0],
         name: row[1],
         city: row[2],
-        display: row[3]
+        display: row[3],
+        position: Number(row[4]) || 100500
       }));
     }
   } catch (err) {

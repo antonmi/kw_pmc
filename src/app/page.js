@@ -3,7 +3,9 @@ import styles from "./page.module.css";
 import { getList } from './sheets';
 import { cache } from 'react'
 export default async function Home() {
-  const answers = await getList();
+  var answers = await getList();
+  answers = answers.filter((el) => el.display == "yes");
+  answers = answers.sort((a, b) => a.position - b.position);
 
   const listItems = answers.map((element, i) => {
     return (
