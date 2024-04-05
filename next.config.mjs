@@ -7,7 +7,7 @@ const nextConfig = {
         headers: [
           {
             "key": "Cache-Control",
-            "value": "maxage=10"
+            "value": "max-age=10"
           },
         ],
       },
