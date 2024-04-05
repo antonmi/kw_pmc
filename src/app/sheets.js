@@ -10,6 +10,7 @@ export async function getList() {
     );
 
     const sheets = google.sheets({ version: 'v4', auth: jwt });
+
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: process.env.SPREADSHEET_ID,
       range: 'Form responses 1', // sheet name
