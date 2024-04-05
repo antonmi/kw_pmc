@@ -21,11 +21,6 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Hello!
-        </p>
-      </div>
       <div>
         {listItems}
       </div>
