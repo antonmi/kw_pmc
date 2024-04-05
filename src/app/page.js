@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { getList } from './sheets';
-import { cache } from 'react'
 export default async function Home() {
   var answers = await getList();
   answers = answers.filter((el) => el.display == "yes");
