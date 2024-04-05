@@ -4,11 +4,10 @@ import { getList } from './sheets';
 import { cache } from 'react'
 export default async function Home() {
   const answers = await getList();
-  console.log(JSON.stringify(answers));
 
-  const listItems = answers.map((element) => {
+  const listItems = answers.map((element, i) => {
     return (
-      <ul type="disc" className="item">
+      <ul type="disc" className="item" key={i}>
         <li>
           <p>{element.timestamp}</p>
           <p>{element.name}</p>
